@@ -12,24 +12,25 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button15"
+        android:layout_above="@+id/buttonFormula"
         android:layout_centerHorizontal="true"
-        android:text="TextView"
-        android:textAppearance="@android:style/TextAppearance.Material.Widget.Toolbar.Title" />
+        android:text=""
+        android:textAppearance="@android:style/TextAppearance.Material.Widget.Toolbar.Title"
+        android:visibility="gone" />
 
     <Button
-        android:id="@+id/button15"
+        android:id="@+id/buttonFormula"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="Button" />
+        android:text="@string/buttonFormula" />
 
     <Button
-        android:id="@+id/button16"
+        android:id="@+id/buttonExam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/button15"
-        android:layout_below="@+id/button15"
-        android:text="Button" />
+        android:layout_alignStart="@+id/buttonFormula"
+        android:layout_below="@+id/buttonFormula"
+        android:text="@string/buttonExam" />
 </RelativeLayout>

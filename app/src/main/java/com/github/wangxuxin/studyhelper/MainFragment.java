@@ -10,9 +10,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.github.wangxuxin.studyhelper.math.MathFragment;
+import com.github.wangxuxin.studyhelper.math.SelectActivity;
 
 /**
  * Created by a1274 on 2018/2/8.
@@ -36,11 +38,5 @@ public class MainFragment extends BaseFragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.content_main, container, false);
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-
     }
 }
