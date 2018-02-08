@@ -1,0 +1,26 @@
+<resources>
+    <string name="mainText">计算</string>
+    <string name="startText">开始</string>
+    <string name="exitText">退出</string>
+    <string name="selectEndText">更多关卡正在开发中。。。</string>
+    <string name="selectText">选择你要挑战的关卡</string>
+    <string name="answerHint">输入答案</string>
+    <string name="finishLevel">闯关成功</string>
+
+    <string name="onePlus">一位数的加法</string>
+    <string name="aboutText">关于</string>
+    <string name="twoPlus">两位数的加法</string>
+    <string name="multiPlus">多位数混合加法</string>
+    <string name="oneLess">一位数的减法</string>
+    <string name="twoLess">两位数的减法</string>
+    <string name="multiLess">多位数混合减法</string>
+    <string name="oneMultiply">一位数的乘法</string>
+    <string name="twoMultiply">两位数的乘法</string>
+    <string name="multiMultiply">多位数混合乘法</string>
+    <string name="oneDivision">一位数的除法</string>
+    <string name="twoDivision">两位数的除法</string>
+    <string name="multiDivision">多位数混合除法</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

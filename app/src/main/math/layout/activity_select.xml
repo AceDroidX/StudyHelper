@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/scrollView">
+        <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:textAppearance="?android:attr/textAppearanceLarge" android:text="@string/selectText"
+                      android:id="@+id/textView4" android:enabled="true" android:gravity="center"
+                      android:padding="10dp"/>
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/onePlus" android:id="@+id/button2" android:onClick="onePlusButton"/>
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/twoPlus" android:id="@+id/button3" android:onClick="twoPlusButton"/>
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/multiPlus" android:id="@+id/button4" android:onClick="multiPlusButton"/>
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/oneLess" android:id="@+id/button5" android:onClick="oneLessButton"/>
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/twoLess" android:id="@+id/button6" android:onClick="twoLessButton"/>
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/multiLess" android:id="@+id/button7" android:onClick="multiLessButton"/>
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/oneMultiply"
+                    android:id="@+id/button8" android:onClick="oneMultiplyButton"/>
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/twoMultiply"
+                    android:id="@+id/button9" android:onClick="twoMultiplyButton"/>
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/multiMultiply"
+                    android:id="@+id/button10" android:onClick="multiMultiplyButton"/>
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/oneDivision"
+                    android:id="@+id/button11" android:onClick="oneDivisionButton"/>
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/twoDivision"
+                    android:id="@+id/button12" android:onClick="twoDivisionButton"/>
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/multiDivision"
+                    android:id="@+id/button13" android:onClick="multiDivisionButton"/>
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:id="@+id/button14" android:text="@string/selectEndText"/>
+        </TableLayout>
+    </ScrollView>
+</LinearLayout>
