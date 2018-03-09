@@ -52,8 +52,8 @@ public class AboutFragment extends BaseFragment implements Parcelable {
         }
 
         TextView copyrightText = getView().findViewById(R.id.textView_copyright);
-        if(!copyrightText.getText().equals("By wxx")){
-            copyrightText.setText("By wxx");
+        if(!copyrightText.getText().equals("By AceDroidX")){
+            copyrightText.setText("By AceDroidX");
             Log.d("wxxDebugAbout","原程序已被修改！！！！By wxx");
         }
 
