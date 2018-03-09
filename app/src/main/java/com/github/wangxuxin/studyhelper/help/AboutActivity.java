@@ -32,8 +32,8 @@ public class AboutActivity extends AppCompatActivity {
         }
 
         TextView copyrightText = (TextView) findViewById(R.id.textView_copyright);
-        if(!copyrightText.getText().equals("By wxx")){
-            copyrightText.setText("By wxx");
+        if(!copyrightText.getText().equals("By AceDroidX")){
+            copyrightText.setText("By AceDroidX");
             Log.d("wxxDebugAbout","原程序已被修改！！！！By wxx");
         }
 
