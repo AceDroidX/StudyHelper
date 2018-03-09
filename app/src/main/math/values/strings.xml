@@ -21,9 +21,6 @@
     <string name="twoDivision">两位数的除法</string>
     <string name="multiDivision">多位数混合除法</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
     <string name="buttonFormula">公式整理</string>
     <string name="buttonExam">答题测试</string>
 </resources>

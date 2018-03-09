@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.github.wangxuxin.studyhelper.math.FormulaActivity"
+    tools:showIn="@layout/activity_formula">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:scaleType="fitStart"
+            app:srcCompat="@drawable/multiplication_table" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="九九乘法表:https://m.51wendang.com/doc/ebd2edfc28532e0cbf33c18f" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="456dp"
+            android:scaleType="fitStart"
+            app:srcCompat="@drawable/unit_conversion" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="单位转化:https://wenku.baidu.com/view/279f232cf02d2af90242a8956bec0975f465a4d5.html"/>
+
+    </LinearLayout>
+
+
+</ScrollView>

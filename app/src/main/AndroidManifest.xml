@@ -28,6 +28,15 @@
         <activity
             android:name=".help.AboutActivity"
             android:label="关于" />
+        <activity
+            android:name=".math.FormulaActivity"
+            android:label="@string/title_activity_formula"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.github.wangxuxin.studyhelper.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
