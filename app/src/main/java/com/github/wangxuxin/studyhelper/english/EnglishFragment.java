@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.github.wangxuxin.studyhelper.BaseFragment;
 import com.github.wangxuxin.studyhelper.R;
@@ -33,27 +34,27 @@ public class EnglishFragment extends BaseFragment implements Parcelable {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_math, container, false);
+        return inflater.inflate(R.layout.fragment_english, container, false);
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        Button buttonFormula = getActivity().findViewById(R.id.buttonFormula);
-        Button buttonExam = getActivity().findViewById(R.id.buttonExam);
-        buttonFormula.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-        buttonExam.setOnClickListener(new View.OnClickListener() {
+        Button buttonE1 = getActivity().findViewById(R.id.buttonE1);
+        Button buttonE2 = getActivity().findViewById(R.id.buttonE2);
+        buttonE1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(getActivity(),SelectActivity.class);
+                intent.setClass(getActivity(),WordActivity.class);
                 //intent.putExtra("name", "xiazdong");  //放入数据
                 startActivity(intent);  //开始跳转
+            }
+        });
+        buttonE2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity().getApplication(),"正在开发中_(:3 」∠ )_",Toast.LENGTH_LONG).show();
             }
         });
     }

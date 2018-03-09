@@ -1,13 +1,33 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.github.wangxuxin.studyhelper.english.EnglishFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonFormula"
+        android:layout_centerHorizontal="true"
+        android:text=""
+        android:textAppearance="@android:style/TextAppearance.Material.Widget.Toolbar.Title"
+        android:visibility="gone" />
 
-</FrameLayout>
+    <Button
+        android:id="@+id/buttonE1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="单词整理" />
+
+    <Button
+        android:id="@+id/buttonE2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/buttonE1"
+        android:layout_below="@+id/buttonE1"
+        android:text="单词测试" />
+
+</RelativeLayout>

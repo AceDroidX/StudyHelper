@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.github.wangxuxin.studyhelper.english.EnglishFragment;
 import com.github.wangxuxin.studyhelper.help.AboutFragment;
 import com.github.wangxuxin.studyhelper.math.MathFragment;
 
@@ -65,7 +66,7 @@ public class MainActivity extends AppCompatActivity
             mfragment = fragments[0];
         } else {
             mfragment = savedInstanceState.getParcelable("mfragment");
-            fragments= (BaseFragment[]) savedInstanceState.getParcelableArray("fragments");
+            fragments = (BaseFragment[]) savedInstanceState.getParcelableArray("fragments");
             //initFragments();
             //findFragments();
         }
@@ -125,10 +126,12 @@ public class MainActivity extends AppCompatActivity
             mfragment = MainFragment.switchContent(fm, mfragment, fragments[0]);
         } else if (id == R.id.nav_math) {
             mfragment = MathFragment.switchContent(fm, mfragment, fragments[1]);
+        } else if (id == R.id.nav_english) {
+            mfragment = EnglishFragment.switchContent(fm, mfragment, fragments[2]);
         } else if (id == R.id.nav_help) {
             //mfragment =
         } else if (id == R.id.nav_about) {
-            mfragment = AboutFragment.switchContent(fm, mfragment, fragments[2]);
+            mfragment = AboutFragment.switchContent(fm, mfragment, fragments[3]);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -140,7 +143,8 @@ public class MainActivity extends AppCompatActivity
         fm = getFragmentManager();
         fragments[0] = MainFragment.newInstance();
         fragments[1] = MathFragment.newInstance();
-        fragments[2] = AboutFragment.newInstance();
+        fragments[2] = EnglishFragment.newInstance();
+        fragments[3] = AboutFragment.newInstance();
     }
 
     /*private void findFragments(){

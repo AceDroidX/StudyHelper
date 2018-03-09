@@ -14,23 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/buttonFormula"
         android:layout_centerHorizontal="true"
-        android:text=""
+        android:text="help"
         android:textAppearance="@android:style/TextAppearance.Material.Widget.Toolbar.Title"
         android:visibility="gone" />
-
-    <Button
-        android:id="@+id/buttonFormula"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/buttonFormula" />
-
-    <Button
-        android:id="@+id/buttonExam"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/buttonFormula"
-        android:layout_below="@+id/buttonFormula"
-        android:text="@string/buttonExam" />
 </RelativeLayout>

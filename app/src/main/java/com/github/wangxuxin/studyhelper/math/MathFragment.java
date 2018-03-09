@@ -46,7 +46,10 @@ public class MathFragment extends BaseFragment implements Parcelable {
         buttonFormula.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent();
+                intent.setClass(getActivity(),FormulaActivity.class);
+                //intent.putExtra("name", "xiazdong");  //放入数据
+                startActivity(intent);  //开始跳转
             }
         });
         buttonExam.setOnClickListener(new View.OnClickListener() {
