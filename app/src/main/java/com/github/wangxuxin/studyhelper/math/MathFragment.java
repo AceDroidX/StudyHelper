@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +19,7 @@ import com.github.wangxuxin.studyhelper.R;
  * Created by a1274 on 2018/2/3.
  */
 
-public class MathFragment extends BaseFragment {
+public class MathFragment extends BaseFragment implements Parcelable {
     private static final String ARG_PARAM1 = "name";
 
     public static MathFragment newInstance() {

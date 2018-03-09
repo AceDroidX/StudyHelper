@@ -3,17 +3,23 @@ package com.github.wangxuxin.studyhelper;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.github.wangxuxin.studyhelper.help.AboutFragment;
 import com.github.wangxuxin.studyhelper.math.MathFragment;
+
+/**
+ * By wxx
+ */
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -21,8 +27,8 @@ public class MainActivity extends AppCompatActivity
     NavigationView navigationView;
     Bundle fbundle = new Bundle();
     FragmentManager fm;
-    Fragment mfragment;
-    Fragment[] fragments = new Fragment[10];
+    Fragment mfragment;//当前fragment
+    BaseFragment[] fragments = new BaseFragment[10];
 
     /*private void initFragment(){
         getFragmentManager().putFragment();
@@ -53,10 +59,26 @@ public class MainActivity extends AppCompatActivity
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        initFragment();
+        if (savedInstanceState == null) {
+            initFragments();
+            fm.beginTransaction().add(R.id.content_frame, fragments[0], "main").commit();
+            mfragment = fragments[0];
+        } else {
+            mfragment = savedInstanceState.getParcelable("mfragment");
+            fragments= (BaseFragment[]) savedInstanceState.getParcelableArray("fragments");
+            //initFragments();
+            //findFragments();
+        }
 
-        fm.beginTransaction().add(R.id.content_frame, fragments[0], "main").commit();
-        mfragment = fragments[0];
+
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putBoolean("isinit", true);
+        outState.putParcelable("mfragment", (Parcelable) mfragment);
+        outState.putParcelableArray("fragments", fragments);
     }
 
     @Override
@@ -113,10 +135,17 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    private void initFragment() {
+    private void initFragments() {
         fm = getFragmentManager();
         fragments[0] = MainFragment.newInstance();
         fragments[1] = MathFragment.newInstance();
         fragments[2] = AboutFragment.newInstance();
     }
+
+    /*private void findFragments(){
+        fm = getFragmentManager();
+        fragments[0] = (BaseFragment) fm.findFragmentByTag(MainFragment.class.getName());
+        fragments[1] = (BaseFragment) fm.findFragmentByTag(MathFragment.class.getName());
+        fragments[2] = (BaseFragment) fm.findFragmentByTag(AboutFragment.class.getName());
+    }*/
 }

@@ -1,11 +1,14 @@
 package com.github.wangxuxin.studyhelper;
 
+import android.annotation.SuppressLint;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +22,7 @@ import android.view.ViewGroup;
  * Use the {@link BaseFragment} factory method to
  * create an instance of this fragment.
  */
-public class BaseFragment extends Fragment {
+public class BaseFragment extends Fragment implements Parcelable {
     /*static int[] layout =
             {
                     R.layout.fragment_unknown,
@@ -44,12 +47,31 @@ public class BaseFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static void switchF(FragmentManager fm){}
+    @SuppressLint("ValidFragment")
+    protected BaseFragment(Parcel in) {
+        mParam1 = in.readString();
+        mParam2 = in.readString();
+    }
+
+    public static final Creator<BaseFragment> CREATOR = new Creator<BaseFragment>() {
+        @Override
+        public BaseFragment createFromParcel(Parcel in) {
+            return new BaseFragment(in);
+        }
+
+        @Override
+        public BaseFragment[] newArray(int size) {
+            return new BaseFragment[size];
+        }
+    };
+
+    public static void switchF(FragmentManager fm) {
+    }
 
     public static Fragment switchContent(FragmentManager fm, Fragment from, Fragment to) {
         FragmentTransaction transaction = fm.beginTransaction();
         if (!to.isAdded()) {    // 先判断是否被add过
-            transaction.hide(from).add(R.id.content_frame, to).commit(); // 隐藏当前的fragment，add下一个到Activity中
+            transaction.hide(from).add(R.id.content_frame, to, to.getClass().getName()).commit(); // 隐藏当前的fragment，add下一个到Activity中
         } else {
             transaction.hide(from).show(to).commit(); // 隐藏当前的fragment，显示下一个
         }
@@ -71,7 +93,6 @@ public class BaseFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }*/
-
     @Override
     public void onResume() {
         super.onResume();
@@ -95,6 +116,7 @@ public class BaseFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             //mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        setRetainInstance(true);
     }
 
     @Override
@@ -126,6 +148,17 @@ public class BaseFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(mParam1);
+        dest.writeString(mParam2);
     }
 
     /**

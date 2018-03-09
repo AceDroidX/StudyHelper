@@ -7,6 +7,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,7 +23,7 @@ import com.github.wangxuxin.studyhelper.math.MathFragment;
  * Created by a1274 on 2018/2/4.
  */
 
-public class AboutFragment extends BaseFragment {
+public class AboutFragment extends BaseFragment implements Parcelable {
     private static final String ARG_PARAM1 = "name";
 
     public static AboutFragment newInstance() {

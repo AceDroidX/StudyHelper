@@ -6,6 +6,7 @@ import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,7 +21,7 @@ import com.github.wangxuxin.studyhelper.math.SelectActivity;
  * Created by a1274 on 2018/2/8.
  */
 
-public class MainFragment extends BaseFragment {
+public class MainFragment extends BaseFragment implements Parcelable {
 
     private static final String ARG_PARAM1 = "name";
 
