@@ -1,19 +1,21 @@
-package com.github.wangxuxin.studyhelper.math;
+package com.github.wangxuxin.studyhelper.english;
 
-        import android.content.Intent;
-        import android.os.Bundle;
-        import android.support.v7.app.AppCompatActivity;
-        import android.text.Editable;
-        import android.text.TextWatcher;
-        import android.util.Log;
-        import android.widget.EditText;
-        import android.widget.TextView;
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
+import android.widget.EditText;
+import android.widget.TextView;
 
-        import com.github.wangxuxin.studyhelper.R;
-
+import com.github.wangxuxin.studyhelper.R;
+import com.github.wangxuxin.studyhelper.math.NumberBuilder;
 /**
- * Created by a1274 on 2016/8/21.
- */
+* 正在开发中
+* 180313 by AceDroidX
+*
+* */
 public class LevelActivity extends AppCompatActivity {
     public static int one;
     public static int two;
@@ -26,7 +28,7 @@ public class LevelActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_level);
+        setContentView(R.layout.activity_word_exam);
         //ActionBar actionBar = getActionBar();
         //actionBar.setDisplayHomeAsUpEnabled(true);
 
@@ -38,63 +40,8 @@ public class LevelActivity extends AppCompatActivity {
         TextView textView=(TextView)findViewById(R.id.typeText1);
         Log.d("wxxDebug",value);
 
-        switch (value){
-            ////关卡添加部分////////////////////////////////////////////////////
-            case "onePlus":
-                textView.setText(getResources().getText(R.string.onePlus));
-                break;
-            case "twoPlus":
-                textView.setText(getResources().getText(R.string.twoPlus));
-                break;
-            case "multiPlus":
-                textView.setText(getResources().getText(R.string.multiPlus));
-                break;
-            case "oneLess":
-                textView.setText(getResources().getText(R.string.oneLess));
-                break;
-            case "twoLess":
-                textView.setText(getResources().getText(R.string.twoLess));
-                break;
-            case "multiLess":
-                textView.setText(getResources().getText(R.string.multiLess));
-                break;
-            case "oneMultiply":
-                textView.setText(getResources().getText(R.string.oneMultiply));
-                break;
-            case "twoMultiply":
-                textView.setText(getResources().getText(R.string.twoMultiply));
-                break;
-            case "multiMultiply":
-                textView.setText(getResources().getText(R.string.multiMultiply));
-                break;
-            case "oneDivision":
-                textView.setText(getResources().getText(R.string.oneDivision));
-                break;
-            case "twoDivision":
-                textView.setText(getResources().getText(R.string.twoDivision));
-                break;
-            case "multiDivision":
-                textView.setText(getResources().getText(R.string.multiDivision));
-                break;
-            ////关卡添加部分////////////////////////////////////////////////////
-            default:
-                return;
-        }
         onLevel();
     }
-
-    /*
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-    */
 
     void onLevel() {
         Log.d("wxxDebug","onLevel");
@@ -117,9 +64,9 @@ public class LevelActivity extends AppCompatActivity {
                 }
                 NumberBuilder.numberBuilder(type);
                 Log.d("wxx",type);
-                Log.d("wxxDebug1",""+LevelActivity.one);
-                Log.d("wxxDebug1",""+LevelActivity.two);
-                Log.d("wxxDebug1",""+LevelActivity.answer);
+                Log.d("wxxDebug1",""+ com.github.wangxuxin.studyhelper.math.LevelActivity.one);
+                Log.d("wxxDebug1",""+ com.github.wangxuxin.studyhelper.math.LevelActivity.two);
+                Log.d("wxxDebug1",""+ com.github.wangxuxin.studyhelper.math.LevelActivity.answer);
                 TextView subjectText = (TextView) findViewById(R.id.subjectText1);
                 subjectText.setText(one + symbol + two);
             }

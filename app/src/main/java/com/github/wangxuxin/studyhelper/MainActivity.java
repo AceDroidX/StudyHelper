@@ -2,6 +2,7 @@ package com.github.wangxuxin.studyhelper;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.design.widget.NavigationView;
@@ -23,7 +24,7 @@ import com.github.wangxuxin.studyhelper.math.MathFragment;
  */
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener,BaseFragment.OnFragmentInteractionListener {
     DrawerLayout drawer;
     NavigationView navigationView;
     Bundle fbundle = new Bundle();
@@ -59,6 +60,9 @@ public class MainActivity extends AppCompatActivity
 
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.openDrawer(GravityCompat.START);
 
         if (savedInstanceState == null) {
             initFragments();
@@ -145,6 +149,11 @@ public class MainActivity extends AppCompatActivity
         fragments[1] = MathFragment.newInstance();
         fragments[2] = EnglishFragment.newInstance();
         fragments[3] = AboutFragment.newInstance();
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 
     /*private void findFragments(){
