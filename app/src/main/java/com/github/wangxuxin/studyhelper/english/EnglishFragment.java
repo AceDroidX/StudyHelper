@@ -54,7 +54,11 @@ public class EnglishFragment extends BaseFragment implements Parcelable {
         buttonE2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity().getApplication(),"正在开发中_(:3 」∠ )_",Toast.LENGTH_LONG).show();
+                //Toast.makeText(getActivity().getApplication(),"正在开发中_(:3 」∠ )_",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent();
+                intent.setClass(getActivity(),LevelActivity.class);
+                //intent.putExtra("name", "xiazdong");  //放入数据
+                startActivity(intent);  //开始跳转
             }
         });
     }

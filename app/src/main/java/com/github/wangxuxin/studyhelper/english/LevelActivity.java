@@ -11,19 +11,17 @@ import android.widget.TextView;
 
 import com.github.wangxuxin.studyhelper.R;
 import com.github.wangxuxin.studyhelper.math.NumberBuilder;
+
+import java.util.Arrays;
+
 /**
-* 正在开发中
-* 180313 by AceDroidX
-*
-* */
+ * 180313 by AceDroidX
+ */
 public class LevelActivity extends AppCompatActivity {
-    public static int one;
-    public static int two;
-    public static int answer;
-    public static String symbol;
-    public String type;
-    public int grade=0;
-    public int end=10;
+    String[] word;
+    String answer;
+    int grade = 0;
+    int end = 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,21 +30,14 @@ public class LevelActivity extends AppCompatActivity {
         //ActionBar actionBar = getActionBar();
         //actionBar.setDisplayHomeAsUpEnabled(true);
 
-        Intent intent = this.getIntent();    //获得当前的Intent
-        Bundle bundle = intent.getExtras();  //获得全部数据
-        String value = bundle.getString("type");  //获得名为name的值
-        type=value;
-
-        TextView textView=(TextView)findViewById(R.id.typeText1);
-        Log.d("wxxDebug",value);
-
         onLevel();
     }
 
     void onLevel() {
-        Log.d("wxxDebug","onLevel");
-        final TextView gradeText = (TextView) findViewById(R.id.gradeText1);
-        final TextView subjectText=(TextView)findViewById(R.id.subjectText1);
+        Log.d("wxxDebug", "onLevel");
+        final TextView gradeText = findViewById(R.id.gradeText1);
+        final TextView subjectText = findViewById(R.id.subjectText1);
+        final WordBuilder wordBuilder = new WordBuilder(getApplication());
 
         gradeText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -56,19 +47,19 @@ public class LevelActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if(grade>end){
-                    if(!getResources().getText(R.string.finishLevel).equals(subjectText.getText())){
+                if (grade > end) {
+                    if (!getResources().getText(R.string.finishLevel).equals(subjectText.getText())) {
                         finishLevel();
                     }
                     return;
                 }
-                NumberBuilder.numberBuilder(type);
-                Log.d("wxx",type);
-                Log.d("wxxDebug1",""+ com.github.wangxuxin.studyhelper.math.LevelActivity.one);
-                Log.d("wxxDebug1",""+ com.github.wangxuxin.studyhelper.math.LevelActivity.two);
-                Log.d("wxxDebug1",""+ com.github.wangxuxin.studyhelper.math.LevelActivity.answer);
+                word = wordBuilder.create();
+                Log.d("wxxDebug", Arrays.toString(word));
+                answer = word[0];
+                Log.d("wxxDebug", "Answer:" + answer);
                 TextView subjectText = (TextView) findViewById(R.id.subjectText1);
-                subjectText.setText(one + symbol + two);
+                subjectText.setText(word[1]);
+
             }
 
             @Override
@@ -77,21 +68,19 @@ public class LevelActivity extends AppCompatActivity {
             }
         });
 
-        Log.d("wxxDebug",""+grade);
-        Log.d("wxxDebug",""+end);
-        gradeText.setText(grade+"/"+end);
+        gradeText.setText(grade + "/" + end);
 
-        final EditText answerEdit = (EditText) findViewById(R.id.answerEdit);
+        final EditText answerEdit = findViewById(R.id.answerEdit);
         answerEdit.addTextChangedListener(new TextWatcher() {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                Log.d("wxxDebug2",answerEdit.getText().toString());
-                if(grade>end){
+                //Log.d("wxxDebug","Change:"+answerEdit.getText().toString());
+                if (grade > end) {
                     return;
                 }
-                if (answerEdit.getText().toString().equals(""+answer)) {
+                if (answerEdit.getText().toString().equals(answer)) {
                     grade++;
-                    gradeText.setText(grade+"/"+end);
+                    gradeText.setText(grade + "/" + end);
                     answerEdit.setText("");
                 }
             }
@@ -106,10 +95,10 @@ public class LevelActivity extends AppCompatActivity {
         });
     }
 
-    void finishLevel(){
-        TextView subjectText=(TextView)findViewById(R.id.subjectText1);
+    void finishLevel() {
+        TextView subjectText = findViewById(R.id.subjectText1);
         subjectText.setText(getResources().getText(R.string.finishLevel));
         final TextView gradeText = (TextView) findViewById(R.id.gradeText1);
-        gradeText.setText((grade-1)+"/"+end);
+        gradeText.setText((grade - 1) + "/" + end);
     }
 }

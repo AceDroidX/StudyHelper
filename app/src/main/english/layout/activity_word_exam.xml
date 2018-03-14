@@ -1,9 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.github.wangxuxin.studyhelper.english.LevelActivity">
+    android:layout_height="match_parent">
 
-</android.support.constraint.ConstraintLayout>
+    <!--<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="type"
+        android:id="@+id/typeText1" android:layout_gravity="center_horizontal"/>-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="10/20"
+        android:id="@+id/gradeText1" android:layout_gravity="center_horizontal"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="1+-×÷"
+        android:id="@+id/subjectText1" android:layout_gravity="center_horizontal" android:padding="10dp"
+        android:textSize="50dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:windowSoftInputMode="stateVisible|stateAlwaysVisible|adjustPan"
+        android:ems="10"
+        android:id="@+id/answerEdit" android:layout_gravity="center_horizontal" android:hint="@string/answerHint"/>
+</LinearLayout>
